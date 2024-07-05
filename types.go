@@ -60,14 +60,18 @@ type RequestsObject struct {
 
 type InputTemplate struct {
 	Name                    string                   `json:"Name"`
-	Requests                RequestsObject           `json:"requests"`
-	PodNames                []string                 `json:"podNames"`
-	Priorities              []int                    `json:"priorities"`
-	InputContainerTemplates []InputContainerTemplate `json:"containerTemplate"`
+	InputPodTemplates       []InputPodTemplate       `json:"pods"`
 	StartTime               string                   `json:"StartTime"`
 	InputNodeGroupTemplates []InputNodeGroupTemplate `json:"nodeGroupTemplate"`
 }
 
+type InputPodTemplate struct {
+	PodNamePrefix           string                   `json:"podNamePrefix"`
+	NumPods                 int                      `json:"numPods"`
+	Priority                int                      `json:"priority"`
+	Request                 RequestsObject           `json:"requests"`
+	InputContainerTemplates []InputContainerTemplate `json:"containerTemplate"`
+}
 type InputContainerTemplate struct {
 	Name     string         `json:"name"`
 	Requests RequestsObject `json:"requests"`

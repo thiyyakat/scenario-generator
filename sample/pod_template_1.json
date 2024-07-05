@@ -1,0 +1,79 @@
+{
+    "StartTime": "2024-05-21T14:13:40Z",
+    "Name": "test-scenario",
+    "pods":[
+        {
+            "podNamePrefix":"small",
+            "numPods":2,
+            
+            "priority":0,
+            "requests": {
+                "cpu": "1",
+                "memory": "4"
+            },
+            "containerTemplate": [
+                {
+                    "requests": {
+                        "cpu": "1",
+                        "memory": "4"
+                    },
+                    "name": "container1"
+                }
+            ]
+
+        },
+        {
+            "podNamePrefix":"medium",
+            "numPods":2,
+            
+            "priority":0,
+            "requests": {
+                "cpu": "2",
+                "memory": "4"
+            },
+            "containerTemplate": [
+                {
+                    "requests": {
+                        "cpu": "1",
+                        "memory": "2"
+                    },
+                    "name": "container1"
+                },
+                {
+                    "requests": {
+                        "cpu": "1",
+                        "memory": "2"
+                    },
+                    "name": "container2"
+                }
+            ]
+
+        }
+    ],
+    "nodeGroupTemplate":[
+        {
+            "CurrentSize":0,
+            "TargetSize": 0,
+            "MinSize":0,
+            "MaxSize":2,
+            "Zone":"europe-west1-d",
+            "MachineType":"m5.xlarge",
+            "Architecture":"amd64",
+            "PoolName": "p1",
+            "PoolMin": 0, 
+            "PoolMax": 2
+        },
+        {
+            "CurrentSize":0,
+            "TargetSize": 0,
+            "MinSize":0,
+            "MaxSize":2,
+            "Zone":"europe-west1-d",
+            "MachineType":"m5.2xlarge",
+            "Architecture":"amd64",
+            "PoolName": "p2",
+            "PoolMin": 0, 
+            "PoolMax": 2
+        }
+    ]
+}

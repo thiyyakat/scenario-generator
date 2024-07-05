@@ -5,18 +5,18 @@
             "StartTime": "2024-05-21T14:13:40Z",
             "UnscheduledPods": [
                 {
-                    "UID": "a57e932a-7153-4330-850a-3d43871d96e6",
-                    "Name": "small-1",
+                    "UID": "b0cd9419-a7bf-476c-8aa3-b87b77c4a7e3",
+                    "Name": "small-0",
                     "Namespace": "default",
                     "NodeName": "",
                     "NominatedNodeName": "",
                     "Labels": {
                         "app.kubernetes.io/component": "test-scenario",
-                        "app.kubernetes.io/name": "small-1"
+                        "app.kubernetes.io/name": "small-0"
                     },
                     "Requests": {
-                        "cpu": "2",
-                        "memory": "8"
+                        "cpu": "1",
+                        "memory": "4"
                     },
                     "Spec": {
                         "containers": [
@@ -35,18 +35,18 @@
                     }
                 },
                 {
-                    "UID": "9a149004-d395-47b7-bcdc-3072be1bb265",
-                    "Name": "small-2",
+                    "UID": "79066dd0-c1da-44ce-a716-db2e22582e5f",
+                    "Name": "small-1",
                     "Namespace": "default",
                     "NodeName": "",
                     "NominatedNodeName": "",
                     "Labels": {
                         "app.kubernetes.io/component": "test-scenario",
-                        "app.kubernetes.io/name": "small-2"
+                        "app.kubernetes.io/name": "small-1"
                     },
                     "Requests": {
-                        "cpu": "2",
-                        "memory": "8"
+                        "cpu": "1",
+                        "memory": "4"
                     },
                     "Spec": {
                         "containers": [
@@ -63,12 +63,92 @@
                         ],
                         "priority": 0
                     }
+                },
+                {
+                    "UID": "57cc3273-bbda-478e-bf34-532eca075e4e",
+                    "Name": "medium-0",
+                    "Namespace": "default",
+                    "NodeName": "",
+                    "NominatedNodeName": "",
+                    "Labels": {
+                        "app.kubernetes.io/component": "test-scenario",
+                        "app.kubernetes.io/name": "medium-0"
+                    },
+                    "Requests": {
+                        "cpu": "2",
+                        "memory": "4"
+                    },
+                    "Spec": {
+                        "containers": [
+                            {
+                                "name": "container1",
+                                "image": "nginx",
+                                "resources": {
+                                    "requests": {
+                                        "cpu": "1",
+                                        "memory": "2"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "container2",
+                                "image": "nginx",
+                                "resources": {
+                                    "requests": {
+                                        "cpu": "1",
+                                        "memory": "2"
+                                    }
+                                }
+                            }
+                        ],
+                        "priority": 0
+                    }
+                },
+                {
+                    "UID": "a4418518-adac-40c4-b82a-e9c70f6a7563",
+                    "Name": "medium-1",
+                    "Namespace": "default",
+                    "NodeName": "",
+                    "NominatedNodeName": "",
+                    "Labels": {
+                        "app.kubernetes.io/component": "test-scenario",
+                        "app.kubernetes.io/name": "medium-1"
+                    },
+                    "Requests": {
+                        "cpu": "2",
+                        "memory": "4"
+                    },
+                    "Spec": {
+                        "containers": [
+                            {
+                                "name": "container1",
+                                "image": "nginx",
+                                "resources": {
+                                    "requests": {
+                                        "cpu": "1",
+                                        "memory": "2"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "container2",
+                                "image": "nginx",
+                                "resources": {
+                                    "requests": {
+                                        "cpu": "1",
+                                        "memory": "2"
+                                    }
+                                }
+                            }
+                        ],
+                        "priority": 0
+                    }
                 }
             ],
             "NodeGroups": [
                 {
                     "RowID": 0,
-                    "Name": "90776c09-ddc7-460e-9ca9-913cdfef35d5",
+                    "Name": "358ffae2-1cf8-4455-9979-a9d488e790db",
                     "CurrentSize": 0,
                     "TargetSize": 0,
                     "MinSize": 0,
@@ -83,7 +163,7 @@
                 },
                 {
                     "RowID": 1,
-                    "Name": "ae1e2ff5-2d0e-4d86-9f0d-36c0b9e5cefb",
+                    "Name": "6eaecc38-0e0e-441c-8149-b89db3141db7",
                     "CurrentSize": 0,
                     "TargetSize": 0,
                     "MinSize": 0,

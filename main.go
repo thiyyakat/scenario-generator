@@ -34,21 +34,23 @@ func main() {
 	s := ScenarioObject{}
 	s.StartTime = i.StartTime
 	// generate pods
-	for index, podName := range i.PodNames {
-		u := UnscheduledPod{}
-		u.UID = uuid.New().String()
-		u.Name = podName
-		u.Namespace = "default"
-		u.NodeName = ""
-		u.NominatedNodeName = ""
-		u.Labels = map[string]string{"app.kubernetes.io/component": i.Name, "app.kubernetes.io/name": u.Name}
-		u.Requests = i.Requests
-		u.Spec.Priority = i.Priorities[index]
-
-		for _, container := range i.InputContainerTemplates {
-			u.Spec.Containers = append(u.Spec.Containers, ContainerObject{Name: container.Name, Image: "nginx", Resources: ResourcesObject{Requests: container.Requests}})
+	for _, podTemplate := range i.InputPodTemplates {
+		for index := 0; index < podTemplate.NumPods; index++ {
+			u := UnscheduledPod{}
+			u.UID = uuid.New().String()
+			u.Name = podTemplate.PodNamePrefix + "-" + fmt.Sprint(index)
+			u.Namespace = "default"
+			u.NodeName = ""
+			u.NominatedNodeName = ""
+			u.Labels = map[string]string{"app.kubernetes.io/component": i.Name, "app.kubernetes.io/name": u.Name}
+			u.Requests = podTemplate.Request
+			u.Spec.Priority = podTemplate.Priority
+			for _, container := range podTemplate.InputContainerTemplates {
+				u.Spec.Containers = append(u.Spec.Containers, ContainerObject{Name: container.Name, Image: "nginx", Resources: ResourcesObject{Requests: container.Requests}})
+			}
+			s.UnscheduledPods = append(s.UnscheduledPods, u)
 		}
-		s.UnscheduledPods = append(s.UnscheduledPods, u)
+
 	}
 	// generate node groups
 	for index, nodeGroup := range i.InputNodeGroupTemplates {
