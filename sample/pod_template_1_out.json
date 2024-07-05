@@ -1,0 +1,102 @@
+{
+    "Name": "test-scenario",
+    "Scenarios": [
+        {
+            "StartTime": "2024-05-21T14:13:40Z",
+            "UnscheduledPods": [
+                {
+                    "UID": "a57e932a-7153-4330-850a-3d43871d96e6",
+                    "Name": "small-1",
+                    "Namespace": "default",
+                    "NodeName": "",
+                    "NominatedNodeName": "",
+                    "Labels": {
+                        "app.kubernetes.io/component": "test-scenario",
+                        "app.kubernetes.io/name": "small-1"
+                    },
+                    "Requests": {
+                        "cpu": "2",
+                        "memory": "8"
+                    },
+                    "Spec": {
+                        "containers": [
+                            {
+                                "name": "container1",
+                                "image": "nginx",
+                                "resources": {
+                                    "requests": {
+                                        "cpu": "1",
+                                        "memory": "4"
+                                    }
+                                }
+                            }
+                        ],
+                        "priority": 0
+                    }
+                },
+                {
+                    "UID": "9a149004-d395-47b7-bcdc-3072be1bb265",
+                    "Name": "small-2",
+                    "Namespace": "default",
+                    "NodeName": "",
+                    "NominatedNodeName": "",
+                    "Labels": {
+                        "app.kubernetes.io/component": "test-scenario",
+                        "app.kubernetes.io/name": "small-2"
+                    },
+                    "Requests": {
+                        "cpu": "2",
+                        "memory": "8"
+                    },
+                    "Spec": {
+                        "containers": [
+                            {
+                                "name": "container1",
+                                "image": "nginx",
+                                "resources": {
+                                    "requests": {
+                                        "cpu": "1",
+                                        "memory": "4"
+                                    }
+                                }
+                            }
+                        ],
+                        "priority": 0
+                    }
+                }
+            ],
+            "NodeGroups": [
+                {
+                    "RowID": 0,
+                    "Name": "90776c09-ddc7-460e-9ca9-913cdfef35d5",
+                    "CurrentSize": 0,
+                    "TargetSize": 0,
+                    "MinSize": 0,
+                    "MaxSize": 2,
+                    "Zone": "europe-west1-d",
+                    "MachineType": "m5.xlarge",
+                    "Architecture": "amd64",
+                    "PoolName": "p1",
+                    "PoolMin": 0,
+                    "PoolMax": 2,
+                    "PoolZones": "europe-west1-d"
+                },
+                {
+                    "RowID": 1,
+                    "Name": "ae1e2ff5-2d0e-4d86-9f0d-36c0b9e5cefb",
+                    "CurrentSize": 0,
+                    "TargetSize": 0,
+                    "MinSize": 0,
+                    "MaxSize": 2,
+                    "Zone": "europe-west1-d",
+                    "MachineType": "m5.2xlarge",
+                    "Architecture": "amd64",
+                    "PoolName": "p2",
+                    "PoolMin": 0,
+                    "PoolMax": 2,
+                    "PoolZones": "europe-west1-d"
+                }
+            ]
+        }
+    ]
+}
